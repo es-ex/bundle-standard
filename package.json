@@ -1,0 +1,33 @@
+{
+  "name": "bundle-standard",
+  "version": "1.0.0",
+  "description": "The default bundle that has all command line related libraries installed",
+  "main": "index.js",
+  "bin": {
+    "esex": "build/esex"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "pkg --output build/esex --options max_old_space_size=4096,expose-gc index.js",
+    "clean": "rm -rf build/",
+    "ci": "pkg --output build/esex --targets node14-linux-x64,node14-macos-x64,node14-win-x64 --options max_old_space_size=4096,expose-gc index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/es-ex/bundle-standard.git"
+  },
+  "keywords": [
+    "es-ex",
+    "bundle",
+    "standard"
+  ],
+  "author": "Ravi Gairola <mallox@pyxzl.net>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/es-ex/bundle-standard/issues"
+  },
+  "homepage": "https://github.com/es-ex/bundle-standard#readme",
+  "devDependencies": {
+    "pkg": "^4.4.8"
+  }
+}
